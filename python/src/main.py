@@ -17,8 +17,8 @@ LCD.lcd_clear()
 
 while True:
     DATA = bme280.sample(BUS, DEVICE_ADDR, CALIBRATION_PARAMS)
-    LCD.lcd_display_string(f"T. {DATA.temperature:.2f}, H. {DATA.humidity:.2f}", 1)
-    LCD.lcd_display_string(f"P. {DATA.pressure:.2f}", 2)
+    LCD.lcd_display_string(f"T:{DATA.temperature:.2f} H:{DATA.humidity:.2f}", 1)
+    LCD.lcd_display_string(f"P:{DATA.pressure:.2f}", 2)
     print(f"printed to LCD {DATA.temperature}, {DATA.humidity}, {DATA.pressure}")
     time.sleep(1)
     LCD.lcd_clear()
